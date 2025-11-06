@@ -1,0 +1,5 @@
+{
+  "name": "Invoice Generation AI",
+  "description": "An AI-powered application that generates professional invoices in structured JSON format from user-provided details, featuring a clean and intuitive interface.",
+  "requestFramePermissions": []
+}
