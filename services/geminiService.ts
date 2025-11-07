@@ -3,7 +3,7 @@ import { Invoice, Customer, InvoiceItem } from '../types';
 
 // WARNING: Hardcoding keys is not recommended for production.
 // Replace this with your actual Gemini API Key.
-const GEMINI_API_KEY = "YOUR_GEMINI_API_KEY";
+const GEMINI_API_KEY = "AIzaSyDj8dmeW9JsIdrXUgPlHkBIPVD3ocfzQBw";
 
 if (!GEMINI_API_KEY || GEMINI_API_KEY === "YOUR_GEMINI_API_KEY") {
     // This is a developer-facing error, so console.error is appropriate.
