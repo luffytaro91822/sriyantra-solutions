@@ -1,20 +1,3 @@
-// Fix: The following reference to "vite/client" can cause a "Cannot find type definition file" error in some environments.
-// It has been commented out because this project uses a global `process` declaration for environment variables,
-// making the Vite-specific client types unnecessary.
-// /// <reference types="vite/client" />
-
-// Fix: Add global declaration for process.env to allow its use in client-side code without TypeScript errors.
-// This is necessary because the Gemini API guidelines mandate the use of process.env.API_KEY.
-// It is assumed the build tool (Vite) is configured to replace these variables at build time.
-declare var process: {
-  env: {
-    [key: string]: string | undefined;
-    API_KEY: string;
-    VITE_SUPABASE_URL: string;
-    VITE_SUPABASE_ANON_KEY: string;
-  }
-};
-
 export interface Company {
   id?: number;
   name: string;

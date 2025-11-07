@@ -1,10 +1,10 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { Database } from '../types';
 
-// Read credentials from environment variables.
-// The execution environment provides these variables via a global `process.env` object.
-const supabaseUrl = process.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY;
+// WARNING: Hardcoding keys is not recommended for production.
+// Replace these with your actual Supabase URL and Anon Key.
+const supabaseUrl = "https://nmypemsgeyriovqjhqpi.supabase.co";
+const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5teXBlbXNnZXlyaW92cWpocXBpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI0MjM3MTYsImV4cCI6MjA3Nzk5OTcxNn0.WytewD5p4lfTyTJ5i4LMMnWXADuWTQx__IkoDtVyS0s";
 
 let supabaseSingleton: SupabaseClient<Database> | null = null;
 
@@ -16,7 +16,7 @@ if (supabaseUrl && supabaseAnonKey) {
         supabaseSingleton = null;
     }
 } else {
-    console.error("Fatal Error: Supabase credentials are missing. The application cannot connect to the backend. Please ensure you have set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in your environment variables on your deployment platform (e.g., Vercel). For local development, create a '.env' file in the root of your project with these variables.");
+    console.error("Fatal Error: Supabase credentials are not configured. Please add your Supabase URL and Anon Key to 'services/supabaseClient.ts'.");
 }
 
 export const supabase = supabaseSingleton;
