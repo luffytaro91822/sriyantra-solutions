@@ -108,9 +108,7 @@ const InvoiceEditor: React.FC<InvoiceEditorProps> = ({ invoiceId, onClose }) => 
             };
             const saved = await invoiceService.saveInvoice(invoiceToSave);
             setGeneratedInvoice(saved);
-            setTimeout(() => {
-                onClose();
-            }, 1000); // Give user time to see the success
+            onClose(); // Close immediately on success
         } catch (err) {
             setError(err instanceof Error ? err.message : 'An unexpected error occurred.');
         } finally {
